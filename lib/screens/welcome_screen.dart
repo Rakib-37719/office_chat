@@ -4,7 +4,7 @@ import 'package:chat_app_office/screens/login_screen.dart';
 import 'package:chat_app_office/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
-  static const String id= 'welcome_screen';
+  static const String id = 'welcome_screen';
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
@@ -42,8 +42,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             SizedBox(
               height: 48.0,
             ),
-            RoundedButton(colour: Colors.lightBlueAccent,title: 'Log in ',),
-            RoundedButton(title: 'Register', colour: Colors.blueAccent,),
+            RoundedButton(
+              colour: Colors.lightBlueAccent,
+              title: 'Log in ',
+              onPressed: () {
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
+            ),
+            RoundedButton(
+              title: 'Register',
+              colour: Colors.blueAccent,
+              onPressed: () {
+                Navigator.pushNamed(context, RegistrationScreen.id);
+              },
+            ),
           ],
         ),
       ),
